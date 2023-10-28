@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
-            title: 'Sakai Vue',
+            title: 'Mini Tools',
             link: [
                 {
                     id: 'theme-css',
