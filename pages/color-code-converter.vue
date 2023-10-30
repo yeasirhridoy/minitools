@@ -28,55 +28,86 @@ const copyToClipboard = (value) => {
         });
       });
 };
+const convertColorCodes = (type: string) => {
+  switch (type) {
+    case 'hex':
+      convertHex()
+      break
+    case 'rgb':
+      convertRgb()
+      break
+    case 'hsl':
+      convertHsl()
+      break
+    case 'cmyk':
+      convertCmyk()
+      break
+  }
+};
 
-
-const updateColorCodes = () => {
+const convertHex = () => {
   const hexValue = hex.value.trim();
-  const rgbValue = rgb.value.trim();
-  const hslValue = hsl.value.trim();
-  const cmykValue = cmyk.value.trim();
 
-  if (hexValue) {
-    const rgbColor = hexToRgb(hexValue);
-    if (rgbColor) {
-      rgb.value = rgbColor;
-    }
-  } else if (rgbValue) {
-    // RGB to HEX conversion
-    const hexColor = rgbToHex(rgbValue);
-    if (hexColor) {
-      hex.value = hexColor;
-    }
-  } else if (hslValue) {
-    // HSL to RGB conversion
-    const rgbColor = hslToRgb(hslValue);
-    if (rgbColor) {
-      rgb.value = rgbColor;
-    }
-  } else if (cmykValue) {
-    // CMYK to RGB conversion
-    const rgbColor = cmykToRgb(cmykValue);
-    if (rgbColor) {
-      rgb.value = rgbColor;
-    }
+  if (hexValue.length !== 6) {
+    console.error('Invalid HEX format');
+    return;
   }
+
+  // Convert to RGB
+  const [r, g, b] = [
+    parseInt(hexValue.slice(0, 2), 16),
+    parseInt(hexValue.slice(2, 4), 16),
+    parseInt(hexValue.slice(4, 6), 16)
+  ];
+
+  rgb.value = `${r},${g},${b}`;
+
+  // Convert to HSL
+  const r1 = r / 255;
+  const g1 = g / 255;
+  const b1 = b / 255;
+  const max = Math.max(r1, g1, b1);
+  const min = Math.min(r1, g1, b1);
+  let h = 0;
+  let s = 0;
+  let l = (max + min) / 2;
+
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+    switch (max) {
+      case r1:
+        h = (g1 - b1) / d + (g1 < b1 ? 6 : 0);
+        break;
+      case g1:
+        h = (b1 - r1) / d + 2;
+        break;
+      case b1:
+        h = (r1 - g1) / d + 4;
+        break;
+    }
+
+    h /= 6;
+  }
+
+  hsl.value = `${Math.round(h * 360)},${Math.round(s * 100)}%,${Math.round(l * 100)}%`;
+
+  // Convert to CMYK
+  const r2 = r / 255;
+  const g2 = g / 255;
+  const b2 = b / 255;
+  const k = 1 - Math.max(r2, g2, b2);
+  const c = (1 - r2 - k) / (1 - k);
+  const m = (1 - g2 - k) / (1 - k);
+  const y = (1 - b2 - k) / (1 - k);
+
+  cmyk.value = `${Math.round(c * 100)}%,${Math.round(m * 100)}%,${Math.round(y * 100)}%,${Math.round(k * 100)}%`;
 };
 
-const hexToRgb = (hex) => {
-  hex = hex.replace('#', '');
-  if (hex.length !== 6) {
-    return null;
-  }
-  const values = hex.split('');
-  const r = parseInt(values[0].toString() + values[1].toString(), 16);
-  const g = parseInt(values[2].toString() + values[3].toString(), 16);
-  const b = parseInt(values[4].toString() + values[5].toString(), 16);
-  return `${r},${g},${b}`;
-};
-
-const rgbToHex = (rgb) => {
+const convertRgb = () => {
   const rgbRegex = /^(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})$/;
-  const match = rgb.match(rgbRegex);
+  const match = rgb.value.match(rgbRegex);
 
   if (!match) {
     return '';
@@ -97,20 +128,12 @@ const rgbToHex = (rgb) => {
 
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 };
+const convertHsl = () => {
 
-const hslToRgb = (hsl) => {
-  // Implement HSL to RGB conversion logic here
 };
+const convertCmyk = () => {
 
-const cmykToRgb = (cmyk) => {
-  // Implement CMYK to RGB conversion logic here
 };
-
-watch([hex, rgb, hsl, cmyk], updateColorCodes);
-
-onMounted(() => {
-  // You can add any additional setup code here
-});
 </script>
 
 <template>
@@ -126,22 +149,26 @@ onMounted(() => {
               HEX
             </span>
             <InputText type="text" v-model="hex" placeholder="000000"/>
-            <Button icon="pi pi-copy" severity="success" @click="copyToClipboard(hex)"/>
+            <Button severity="success" @click="convertColorCodes('hex')">Convert</Button>
+            <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(hex)"/>
           </div>
           <div class="p-inputgroup flex-1">
             <span class="p-inputgroup-addon w-1">RGB</span>
             <InputText type="text" v-model="rgb" placeholder="R,G,B"/>
-            <Button icon="pi pi-copy" severity="success" @click="copyToClipboard(rgb)"/>
+            <Button severity="success" @click="convertColorCodes('rgb')">Convert</Button>
+            <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(rgb)"/>
           </div>
           <div class="p-inputgroup flex-1">
             <span class="p-inputgroup-addon w-1">HSL</span>
             <InputText type="text" v-model="hsl" placeholder="H,S,L"/>
-            <Button icon="pi pi-copy" severity="success" @click="copyToClipboard(hsl)"/>
+            <Button severity="success" @click="convertColorCodes('hsl')">Convert</Button>
+            <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(hsl)"/>
           </div>
           <div class="p-inputgroup flex-1">
             <span class="p-inputgroup-addon w-1">CMYK</span>
             <InputText type="text" v-model="cmyk" placeholder="C,M,Y,K"/>
-            <Button icon="pi pi-copy" severity="success" @click="copyToClipboard(cmyk)"/>
+            <Button severity="success" @click="convertColorCodes('cmyk')">Convert</Button>
+            <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(cmyk)"/>
           </div>
         </div>
       </div>
