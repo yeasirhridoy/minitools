@@ -143,7 +143,11 @@ const convertCmyk = () => {
       <div class="card">
         <h1>Color Code Converter</h1>
         <p>Converts color codes between RGB, HEX, HSL, and CMYK</p>
-        <div class="flex flex-column gap-3">
+        <div class="flex flex-column gap-3 max-w-fit">
+          <div class="p-inputgroup flex-1 w-full">
+            <ColorPicker v-model="hex" class="hidden" :style="{backgroundColor: `#${hex}`}" ref="colorPicker"/>
+            <div class="w-full h-2rem" :style="{backgroundColor: `#${hex}`}"></div>
+          </div>
           <div class="p-inputgroup flex-1">
             <span class="p-inputgroup-addon w-1">
               HEX
