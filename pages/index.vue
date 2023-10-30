@@ -1,12 +1,21 @@
 <script setup lang="ts">
-
+const items = [
+  {
+    title: 'Word Counter',
+    to: '/word-counter'
+  },
+  {
+    title: 'Color Code Converter',
+    to: '/color-code-converter'
+  }
+]
 </script>
 
 <template>
   <div class="grid">
-    <div class="col-12 lg:col-6 xl:col-3">
+    <div v-for="(item,i) in items" :key="i" class="col-12 lg:col-6 xl:col-3">
       <div class="card mb-0">
-        <NuxtLink to="/word-counter">Word Counter</NuxtLink>
+        <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
       </div>
     </div>
   </div>

@@ -21,6 +21,7 @@ const count = computed(() => {
     <div class="col-12">
       <div class="card">
         <h1>Word Counter</h1>
+        <p>Counts words, characters, sentences, and paragraphs.</p>
         <Textarea v-model="text" auto-resize autofocus rows="20" class="w-full"
                   placeholder="Start typing, or copy and paste your text here..."/>
         <div class="mt-2">

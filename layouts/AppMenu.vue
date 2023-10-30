@@ -14,6 +14,11 @@ const model = ref([
         label: 'Word Counter',
         icon: 'pi pi-fw pi-pencil',
         to: '/word-counter'
+      },
+      {
+        label: 'Color Code Converter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/color-code-converter'
       }
     ]
   }
