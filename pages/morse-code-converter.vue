@@ -144,24 +144,24 @@ const copyToClipboard = () => {
         </h1>
         <p>{{ mode === 'text' ? 'Converts text to Morse code.' : 'Converts Morse code to text.' }}</p>
         <template v-if="mode==='text'">
-          <Textarea v-model="text" auto-resize autofocus rows="20" class="w-full"
+          <Textarea v-model="text" auto-resize autofocus rows="10" class="w-full"
                     placeholder="Start typing, or copy and paste your text here..."/>
           <div class="flex justify-content-between mt-2">
             <h4>Output</h4>
             <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
           </div>
-          <div class="mt-2 border-1 border-round border-gray-300 p-2">
+          <div class="mt-2 border-1 border-round border-gray-300 p-2" style="min-height: 64px">
             {{ code }}
           </div>
         </template>
         <template v-else>
-          <Textarea v-model="code" auto-resize autofocus rows="20" class="w-full"
+          <Textarea v-model="code" auto-resize autofocus rows="10" class="w-full"
                     placeholder="Start typing, or copy and paste your Morse code here..."/>
           <div class="flex justify-content-between mt-2">
             <h4>Output</h4>
             <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
           </div>
-          <div class="mt-2 border-1 border-round border-gray-300 p-2">
+          <div class="mt-2 border-1 border-round border-gray-300 p-2" style="min-height: 64px">
             {{ text }}
           </div>
         </template>
