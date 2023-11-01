@@ -29,6 +29,11 @@ const model = ref([
         label: 'Morse Code Converter',
         icon: 'pi pi-fw pi-pencil',
         to: '/morse-code-converter'
+      },
+      {
+        label: 'URL Encoder Decoder',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/url-encoder-decoder'
       }
     ]
   }

@@ -11,6 +11,10 @@ const items = [
   {
     title: 'Morse Code Converter',
     to: '/morse-code-converter'
+  },
+  {
+    title: 'URL Encoder Decoder',
+    to: '/url-encoder-decoder'
   }
 ]
 </script>
