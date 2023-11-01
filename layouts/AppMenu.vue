@@ -8,17 +8,27 @@ const model = ref([
     items: [{label: 'Home', icon: 'pi pi-fw pi-home', to: '/'}]
   },
   {
-    label: 'Text',
+    label: 'Counter',
     items: [
       {
         label: 'Word Counter',
         icon: 'pi pi-fw pi-pencil',
         to: '/word-counter'
-      },
+      }
+    ]
+  },
+  {
+    label: 'Converter',
+    items: [
       {
         label: 'Color Code Converter',
         icon: 'pi pi-fw pi-pencil',
         to: '/color-code-converter'
+      },
+      {
+        label: 'Morse Code Converter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/morse-code-converter'
       }
     ]
   }

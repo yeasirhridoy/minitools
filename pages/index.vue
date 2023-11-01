@@ -7,6 +7,10 @@ const items = [
   {
     title: 'Color Code Converter',
     to: '/color-code-converter'
+  },
+  {
+    title: 'Morse Code Converter',
+    to: '/morse-code-converter'
   }
 ]
 </script>
