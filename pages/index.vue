@@ -15,6 +15,10 @@ const items = [
   {
     title: 'URL Encoder Decoder',
     to: '/url-encoder-decoder'
+  },
+  {
+    title: 'Time Formatter',
+    to: '/time-formatter'
   }
 ]
 </script>

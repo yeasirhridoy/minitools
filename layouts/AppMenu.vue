@@ -18,6 +18,16 @@ const model = ref([
     ]
   },
   {
+    label: 'Formatter',
+    items: [
+      {
+        label: 'Time Formatter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/time-formatter'
+      }
+    ]
+  },
+  {
     label: 'Converter',
     items: [
       {
