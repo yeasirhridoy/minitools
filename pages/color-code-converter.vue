@@ -109,6 +109,10 @@ const toCmyk = (hexValue) => {
     parseInt(hexValue.slice(2, 4), 16),
     parseInt(hexValue.slice(4, 6), 16)
   ];
+  if (r === 0 && g === 0 && b === 0) {
+    cmyk.value = '0%,0%,0%,100%';
+    return;
+  }
   const r2 = r / 255;
   const g2 = g / 255;
   const b2 = b / 255;
@@ -265,13 +269,13 @@ watch(() => color.value, (value) => {
             <span class="p-inputgroup-addon w-1">
               HEX
             </span>
-            <InputText type="text" v-model="hex" :value="hex" placeholder="000000" :class="{'p-invalid': !isValidHex}"/>
+            <InputMask v-model="hex" mask="******" placeholder="000000" :class="{'p-invalid': !isValidHex}"/>
             <Button severity="success" @click="convertColorCodes('hex')">Convert</Button>
             <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(hex)"/>
           </div>
           <div class="p-inputgroup flex-1">
             <span class="p-inputgroup-addon w-1">RGB</span>
-            <InputText type="text" v-model="rgb" placeholder="R,G,B" :class="{'p-invalid':!isValidRgb}"/>
+            <InputText v-model="rgb" placeholder="R,G,B" :class="{'p-invalid':!isValidRgb}"/>
             <Button severity="success" @click="convertColorCodes('rgb')">Convert</Button>
             <Button icon="pi pi-copy" severity="info" @click="copyToClipboard(rgb)"/>
           </div>
