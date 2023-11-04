@@ -146,7 +146,7 @@ const copyToClipboard = () => {
         <template v-if="mode==='text'">
           <Textarea v-model="text" auto-resize autofocus rows="10" class="w-full"
                     placeholder="Start typing, or copy and paste your text here..."/>
-          <div class="flex justify-content-between mt-2">
+          <div class="flex justify-content-between mt-4">
             <h4>Output</h4>
             <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
           </div>
@@ -157,7 +157,7 @@ const copyToClipboard = () => {
         <template v-else>
           <Textarea v-model="code" auto-resize autofocus rows="10" class="w-full"
                     placeholder="Start typing, or copy and paste your Morse code here..."/>
-          <div class="flex justify-content-between mt-2">
+          <div class="flex justify-content-between mt-4">
             <h4>Output</h4>
             <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
           </div>

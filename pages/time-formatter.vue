@@ -1,5 +1,7 @@
 <script setup>
 
+import FormattedTime from "../components/time-formatter/FormattedTime.vue";
+
 const timestamp = ref(new Date());
 const formatDate = (format) => {
   const date = timestamp.value;
@@ -25,9 +27,13 @@ const formatDate = (format) => {
     'A': date.getHours() >= 12 ? 'PM' : 'AM',
   };
 
-  return format.replace(/(YYYY|M|MM|MMM|MMMM|DDDD|DDD|DD|D|HH|H|hh|h|mm|m|ss|s|a|A)/g, match => {
+  return format.replace(/(YYYY|MMMM|MMM|MM|M|DDDD|DDD|DD|D|HH|H|hh|h|mm|m|ss|s|a|A)/g, match => {
     return parts[match];
   });
+};
+
+const getDateInMilliseconds = () => {
+  return timestamp.value.getTime();
 };
 
 const getMonthName = (monthIndex) => {
@@ -61,6 +67,9 @@ const getShortDayName = (dayIndex) => {
 const formattedTimes = computed(() => {
   return [
     formatDate('M/DD/YYYY HH:mm:ss A'),
+    formatDate('MMMM DDDD YYYY, h:mm:ss A'),
+    formatDate('MMM DD YYYY, h:mm:ss A'),
+    getDateInMilliseconds()
   ];
 })
 </script>
@@ -75,9 +84,7 @@ const formattedTimes = computed(() => {
         </div>
         <h4 class="mt-2">Output</h4>
         <div class="border-1 border-round border-gray-300 p-2" style="min-height: 64px">
-          <div v-for="(time,i) in formattedTimes" :key="i">
-            {{ time }}
-          </div>
+          <FormattedTime v-for="(time,i) in formattedTimes" :key="i" :time="time"/>
         </div>
       </div>
     </div>

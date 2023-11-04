@@ -57,7 +57,7 @@ const copyToClipboard = () => {
           </div>
         </div>
         <InputText v-model="url" placeholder="Enter URL" class="w-full"/>
-        <div class="flex justify-content-between mt-2">
+        <div class="flex justify-content-between mt-4">
           <h4>Output</h4>
           <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
         </div>
