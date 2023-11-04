@@ -23,6 +23,26 @@ const items = [
   {
     title: 'Birthday Calculator',
     to: '/birthday-calculator'
+  },
+  {
+    title: 'Text Generator',
+    to: '/text-generator'
+  },
+  {
+    title: 'Unit Converter',
+    to: '/unit-converter'
+  },
+  {
+    title: 'Password Generator',
+    to: '/password-generator'
+  },
+  {
+    title: 'Case Converter',
+    to: '/case-converter'
+  },
+  {
+    title: 'Regex Checker',
+    to: '/regex-checker'
   }
 ]
 </script>

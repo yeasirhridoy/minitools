@@ -28,6 +28,31 @@ const model = ref([
     ]
   },
   {
+    label: 'Checker',
+    items: [
+      {
+        label: 'Regex Checker',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/regex-checker'
+      }
+    ]
+  },
+  {
+    label: 'Generator',
+    items: [
+      {
+        label: 'Text Generator',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/text-generator'
+      },
+      {
+        label: 'Password Generator',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/password-generator'
+      }
+    ]
+  },
+  {
     label: 'Converter',
     items: [
       {
@@ -44,6 +69,16 @@ const model = ref([
         label: 'URL Encoder Decoder',
         icon: 'pi pi-fw pi-pencil',
         to: '/url-encoder-decoder'
+      },
+      {
+        label: 'Unit Converter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/unit-converter'
+      },
+      {
+        label: 'Case Converter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/case-converter'
       }
     ]
   },
