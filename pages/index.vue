@@ -19,6 +19,10 @@ const items = [
   {
     title: 'Time Formatter',
     to: '/time-formatter'
+  },
+  {
+    title: 'Birthday Calculator',
+    to: '/birthday-calculator'
   }
 ]
 </script>

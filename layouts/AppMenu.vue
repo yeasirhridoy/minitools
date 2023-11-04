@@ -46,6 +46,16 @@ const model = ref([
         to: '/url-encoder-decoder'
       }
     ]
+  },
+  {
+    label: 'Calculator',
+    items: [
+      {
+        label: 'Birthday Calculator',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/birthday-calculator'
+      }
+    ]
   }
 ]);
 </script>
