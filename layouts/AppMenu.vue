@@ -31,9 +31,9 @@ const model = ref([
     label: 'Checker',
     items: [
       {
-        label: 'Sentence Comparator',
+        label: 'Text Comparator',
         icon: 'pi pi-fw pi-pencil',
-        to: '/sentence-comparator'
+        to: '/text-comparator'
       },
       {
         label: 'Regex Checker',
@@ -91,9 +91,9 @@ const model = ref([
     label: 'Calculator',
     items: [
       {
-        label: 'Birthday Calculator',
+        label: 'Age Calculator',
         icon: 'pi pi-fw pi-pencil',
-        to: '/birthday-calculator'
+        to: '/age-calculator'
       }
     ]
   }

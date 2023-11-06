@@ -1,7 +1,4 @@
 <script setup>
-import {useToast} from "primevue/usetoast";
-
-const toast = useToast();
 const url = ref('');
 const operation = ref('encode'); // Default to URL encoding
 const result = ref('');
@@ -15,29 +12,6 @@ const processURL = () => {
 };
 
 watch([url, operation], processURL);
-
-const copyToClipboard = () => {
-  const value = result.value
-  navigator.clipboard.writeText(value)
-      .then(() => {
-        console.log('Copied to clipboard successfully');
-        toast.add({
-          severity: 'success',
-          summary: 'Copied to clipboard',
-          detail: value,
-          life: 3000
-        });
-      })
-      .catch((err) => {
-        console.error('Copy to clipboard failed:', err);
-        toast.add({
-          severity: 'error',
-          summary: 'Copy to clipboard failed',
-          detail: err,
-          life: 3000
-        });
-      });
-};
 </script>
 
 <template>
@@ -56,14 +30,11 @@ const copyToClipboard = () => {
             <label for="decode" class="ml-2">Decode</label>
           </div>
         </div>
-        <InputText v-model="url" placeholder="Enter URL" class="w-full"/>
-        <div class="flex justify-content-between mt-4">
-          <h4>Output</h4>
-          <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
+        <div class="flex-auto">
+          <label for="url" class="font-bold">URL</label>
+          <InputText v-model="url" placeholder="Enter URL" class="w-full mt-2"/>
         </div>
-        <div class="mt-2 border-1 border-round border-gray-300 p-2" style="min-height: 64px">
-          {{ result }}
-        </div>
+        <SinglePreviewBox :text="result"/>
       </div>
     </div>
   </div>

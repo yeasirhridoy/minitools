@@ -21,8 +21,8 @@ const items = [
     to: '/time-formatter'
   },
   {
-    title: 'Birthday Calculator',
-    to: '/birthday-calculator'
+    title: 'Age Calculator',
+    to: '/age-calculator'
   },
   {
     title: 'Text Generator',
@@ -45,8 +45,8 @@ const items = [
     to: '/regex-checker'
   },
   {
-    title: 'Sentence Comparator',
-    to: '/sentence-comparator'
+    title: 'Text Comparator',
+    to: '/text-comparator'
   }
 ]
 </script>

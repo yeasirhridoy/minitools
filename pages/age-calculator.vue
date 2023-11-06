@@ -74,7 +74,7 @@ const age = computed(() => {
   <div class="grid">
     <div class="col-12">
       <div class="card">
-        <h1>Birthday Calculator</h1>
+        <h1>Age Calculator</h1>
         <div class="grid gap-2">
           <div class="p-inputgroup flex-1">
           <span class="p-inputgroup-addon w-8rem">

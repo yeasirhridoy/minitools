@@ -80,8 +80,13 @@ const formattedTimes = computed(() => {
       <div class="card">
         <h1>Time Formatter</h1>
         <p>Format a timestamp into multiple formats.</p>
-        <div class="p-inputgroup flex-1 w-fit mb-4">
-          <Calendar id="calendar-12h" v-model="timestamp" showTime hourFormat="12" placeholder="Select a time"/>
+        <label for="calendar-12h" class="font-bold">Timestamp</label>
+        <div class="p-inputgroup flex-1 w-fit mt-2 mb-4">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-calendar"></i>
+          </span>
+          <Calendar id="calendar-12h" v-model="timestamp" show-time show-icon hourFormat="12"
+                    placeholder="Select a time"/>
         </div>
         <h4 class="mt-2">Output</h4>
         <div class="border-1 border-round border-gray-300 p-2" style="min-height: 64px">
