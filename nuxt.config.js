@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     typescript: false,
-
     app: {
         head: {
             title: 'Mini Tools',
@@ -36,6 +35,7 @@ export default defineNuxtConfig({
         }
     ],
     css: ['primeicons/primeicons.css', 'primeflex/primeflex.scss', 'primevue/resources/primevue.min.css', '@/assets/styles.scss'],
+    modules: ['nuxt-simple-sitemap','nuxt-simple-robots'],
     routeRules: {
         '/time-formatter': {ssr: false},
         '/text-comparator': {ssr: false}
