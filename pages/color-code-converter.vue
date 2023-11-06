@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import {useToast} from "primevue/usetoast";
 
+useSeoMeta({
+  title: 'Color Code Converter',
+  ogTitle: 'Color Code Converter',
+  description: 'Color Code Converter',
+  ogDescription: 'Color Code Converter',
+  ogImage: '',
+})
+
 const toast = useToast();
 const color = ref('#000000')
 const hex = ref('')

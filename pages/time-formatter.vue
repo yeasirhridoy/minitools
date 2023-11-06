@@ -1,6 +1,13 @@
 <script setup>
-
 import FormattedTime from "../components/time-formatter/FormattedTime.vue";
+
+useSeoMeta({
+  title: 'Time Formatter',
+  ogTitle: 'Time Formatter',
+  description: 'Time Formatter',
+  ogDescription: 'Time Formatter',
+  ogImage: '',
+})
 
 const timestamp = ref(new Date());
 const formatDate = (format) => {

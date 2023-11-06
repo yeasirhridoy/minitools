@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Text Comparator',
+  ogTitle: 'Text Comparator',
+  description: 'Text Comparator',
+  ogDescription: 'Text Comparator',
+  ogImage: '',
+})
+
 import {diff_match_patch} from 'diff-match-patch';
 const textToCompare = ref('')
 const textToCompareWith = ref('')

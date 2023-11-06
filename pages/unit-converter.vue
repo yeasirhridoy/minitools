@@ -1,10 +1,21 @@
 <script setup>
-
+useSeoMeta({
+  title: 'Unit Converter',
+  ogTitle: 'Unit Converter',
+  description: 'Unit Converter',
+  ogDescription: 'Unit Converter',
+  ogImage: '',
+})
 </script>
 
 <template>
-  <div>
-    a simple unit converter for common units like inches to centimeters, pounds to kilograms, etc.
+  <div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <h1>Unit Converter</h1>
+        <p>Convert units from one to another.</p>
+      </div>
+    </div>
   </div>
 </template>
 

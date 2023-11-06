@@ -1,5 +1,14 @@
 <script setup lang="ts">
+
 const text = ref('')
+
+useSeoMeta({
+  title: 'Word Counter',
+  ogTitle: 'Word Counter',
+  description: 'Word Counter',
+  ogDescription: 'Word Counter',
+  ogImage: '',
+})
 
 const count = computed(() => {
   const textValue = text.value;

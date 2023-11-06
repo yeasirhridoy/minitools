@@ -1,6 +1,14 @@
 <script setup>
 import {useToast} from "primevue/usetoast";
 
+useSeoMeta({
+  title: 'Morse Code Converter',
+  ogTitle: 'Morse Code Converter',
+  description: 'Morse Code Converter',
+  ogDescription: 'Morse Code Converter',
+  ogImage: '',
+})
+
 const toast = useToast();
 const mode = ref('text')
 const text = ref('')

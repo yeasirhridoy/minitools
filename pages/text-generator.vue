@@ -1,4 +1,13 @@
 <script setup lang="ts">
+
+useSeoMeta({
+  title: 'Text Generator',
+  ogTitle: 'Text Generator',
+  description: 'Text Generator',
+  ogDescription: 'Text Generator',
+  ogImage: '',
+})
+
 const text = ref('')
 const paragraphs = ref(1)
 const words = ref(100)

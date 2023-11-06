@@ -1,4 +1,6 @@
 <script setup lang="ts">
+
+
 const items = [
   {
     title: 'Word Counter',
@@ -49,6 +51,15 @@ const items = [
     to: '/text-comparator'
   }
 ]
+
+useSeoMeta({
+  title: 'Home',
+  ogTitle: 'Home',
+  description: 'Home page of Online Tools powered by Brilliant Softs',
+  ogDescription: 'Home page of Online Tools powered by Brilliant Softs',
+  ogImage: '',
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>

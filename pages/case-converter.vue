@@ -1,5 +1,13 @@
 <script setup lang="ts">
 
+useSeoMeta({
+  title: 'Case Converter',
+  ogTitle: 'Case Converter',
+  description: 'Case Converter',
+  ogDescription: 'Case Converter',
+  ogImage: '',
+})
+
 const outputCase = ref('lowercase')
 const text = ref('')
 
@@ -33,6 +41,7 @@ const outputText = computed(() => {
     <div class="col-12">
       <div class="card">
         <h1>Case Converter</h1>
+        <p>Convert text to different cases.</p>
         <div class="flex flex-wrap gap-3 mb-2">
           <div v-for="(item,i) in cases" class="flex align-items-center">
             <RadioButton :id="item" v-model="outputCase" :value="item"/>

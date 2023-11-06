@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Regex Checker',
+  ogTitle: 'Regex Checker',
+  description: 'Regex Checker',
+  ogDescription: 'Regex Checker',
+  ogImage: '',
+})
+
 const text = ref('')
 const regex = ref('')
 

@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Age Calculator',
+  ogTitle: 'Age Calculator',
+  description: 'Age Calculator',
+  ogDescription: 'Age Calculator',
+  ogImage: '',
+})
+
 const startDate = ref();
 const endDate = ref(new Date());
 
@@ -75,6 +84,7 @@ const age = computed(() => {
     <div class="col-12">
       <div class="card">
         <h1>Age Calculator</h1>
+        <p>Calculate your age in years, months, and days.</p>
         <div class="grid gap-2">
           <div class="p-inputgroup flex-1">
           <span class="p-inputgroup-addon w-8rem">

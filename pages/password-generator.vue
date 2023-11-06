@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+  title: 'Password Generator',
+  ogTitle: 'Password Generator',
+  description: 'Password Generator',
+  ogDescription: 'Password Generator',
+  ogImage: '',
+})
+
 const password = ref('')
 const length = ref(12)
 const uppercase = ref(true)
@@ -44,8 +53,8 @@ const generatePassword = () => {
   <div class="grid">
     <div class="col-12">
       <div class="card">
-        <h1>Text Generator</h1>
-        <p>Generate random text for your designs.</p>
+        <h1>Password Generator</h1>
+        <p>Generate random password for you.</p>
         <div class="flex align-items-center flex-wrap gap-2 p-fluid">
           <div class="flex-auto md:max-w-fit">
             <label for="paragraph" class="font-bold block mb-2">Password length</label>

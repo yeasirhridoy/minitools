@@ -1,4 +1,13 @@
 <script setup>
+
+useSeoMeta({
+  title: 'URL Encoder Decoder',
+  ogTitle: 'URL Encoder Decoder',
+  description: 'URL Encoder Decoder',
+  ogDescription: 'URL Encoder Decoder',
+  ogImage: '',
+})
+
 const url = ref('');
 const operation = ref('encode'); // Default to URL encoding
 const result = ref('');
@@ -20,6 +29,7 @@ watch([url, operation], processURL);
     <div class="col-12">
       <div class="card">
         <h1>URL Encoder Decoder</h1>
+        <p>Encodes or decodes a URL.</p>
         <div class="flex flex-wrap gap-3 mb-2">
           <div class="flex align-items-center">
             <RadioButton v-model="operation" inputId="encode" name="encode" value="encode"/>

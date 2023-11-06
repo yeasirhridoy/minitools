@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'Mini Tools',
+            titleTemplate: '%s - Mini Tools',
             link: [
                 {
                     id: 'theme-css',
