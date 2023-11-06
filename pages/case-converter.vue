@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import {useToast} from "primevue/usetoast";
 
 const outputCase = ref('lowercase')
 const text = ref('')
 
-const toast = useToast();
 const cases = [
   'lowercase',
   'uppercase',
@@ -28,32 +26,10 @@ const outputText = computed(() => {
       return text.value
   }
 })
-
-const copyToClipboard = () => {
-  const value = outputText.value as string
-  navigator.clipboard.writeText(value)
-      .then(() => {
-        toast.add({
-          severity: 'success',
-          summary: 'Copied to clipboard',
-          detail: value,
-          life: 3000
-        });
-      })
-      .catch((err) => {
-        toast.add({
-          severity: 'error',
-          summary: 'Copy to clipboard failed',
-          detail: err,
-          life: 3000
-        });
-      });
-};
 </script>
 
 <template>
   <div class="grid">
-    <Toast/>
     <div class="col-12">
       <div class="card">
         <h1>Case Converter</h1>
@@ -65,13 +41,7 @@ const copyToClipboard = () => {
         </div>
         <Textarea v-model="text" auto-resize autofocus rows="10" class="w-full mt-2"
                   placeholder="Start typing, or copy and paste your text here..."/>
-        <div class="flex justify-content-between mt-4">
-          <h4>Output</h4>
-          <Button @click="copyToClipboard" size="small" icon="pi pi-copy"/>
-        </div>
-        <div class="mt-2 border-1 border-round border-gray-300 p-2" style="min-height: 64px">
-          {{ outputText }}
-        </div>
+        <SinglePreviewBox :text="outputText"/>
       </div>
     </div>
   </div>

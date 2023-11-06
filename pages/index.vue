@@ -43,6 +43,10 @@ const items = [
   {
     title: 'Regex Checker',
     to: '/regex-checker'
+  },
+  {
+    title: 'Sentence Comparator',
+    to: '/sentence-comparator'
   }
 ]
 </script>

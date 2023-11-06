@@ -79,6 +79,7 @@ const formattedTimes = computed(() => {
     <div class="col-12">
       <div class="card">
         <h1>Time Formatter</h1>
+        <p>Format a timestamp into multiple formats.</p>
         <div class="p-inputgroup flex-1 w-fit mb-4">
           <Calendar id="calendar-12h" v-model="timestamp" showTime hourFormat="12" placeholder="Select a time"/>
         </div>

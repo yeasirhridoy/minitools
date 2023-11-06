@@ -31,6 +31,11 @@ const model = ref([
     label: 'Checker',
     items: [
       {
+        label: 'Sentence Comparator',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/sentence-comparator'
+      },
+      {
         label: 'Regex Checker',
         icon: 'pi pi-fw pi-pencil',
         to: '/regex-checker'
