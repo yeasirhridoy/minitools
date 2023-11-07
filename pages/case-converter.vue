@@ -29,7 +29,7 @@ const outputText = computed(() => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
       })
     case 'sentencecase':
-      return text.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, (c) => c.toUpperCase())
+      return text.value.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase())
     default:
       return text.value
   }

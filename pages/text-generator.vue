@@ -40,7 +40,7 @@ const generateLoremIpsum = () => {
     loremIpsumText += '\n\n';
   }
 
-  loremIpsumText = loremIpsumText.replace(/(^\s*\w|[\.\!\?]\s*\w)/g, (c) => c.toUpperCase())
+  loremIpsumText = loremIpsumText.replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase())
 
   text.value = loremIpsumText.trim();
 }
