@@ -94,6 +94,11 @@ const model = ref([
         label: 'Age Calculator',
         icon: 'pi pi-fw pi-pencil',
         to: '/age-calculator'
+      },
+      {
+        label: 'BMI Calculator',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/bmi-calculator'
       }
     ]
   }

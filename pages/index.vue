@@ -49,6 +49,10 @@ const items = [
   {
     title: 'Text Comparator',
     to: '/text-comparator'
+  },
+  {
+    title: 'BMI Calculator',
+    to: '/bmi-calculator'
   }
 ]
 
@@ -64,6 +68,9 @@ useSeoMeta({
 
 <template>
   <div class="grid">
+    <div class="col-12">
+      <h1 class="text-center">Online Tools</h1>
+    </div>
     <div v-for="(item,i) in items" :key="i" class="col-12 lg:col-6 xl:col-3">
       <div class="card mb-0">
         <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
