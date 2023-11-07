@@ -10,7 +10,7 @@ useSeoMeta({
 
 const text = ref('')
 const paragraphs = ref(1)
-const words = ref(100)
+const words = ref()
 
 const randomPunctuation = () => {
   const punctuation = ['.', ',', '!', '?', ';', ':', '…'];
@@ -24,11 +24,12 @@ const generateLoremIpsum = () => {
 
   let loremIpsumText = '';
   for (let p = 0; p < paragraphs.value; p++) {
-    for (let w = 0; w < words.value; w++) {
+    const numberOfWords = words.value ? words.value : Math.floor(Math.random() * 300);
+    for (let w = 0; w < numberOfWords; w++) {
       const randomWord = loremIpsumWords[Math.floor(Math.random() * loremIpsumWords.length)];
       loremIpsumText += randomWord + ' ';
 
-      if (w === words.value - 1) {
+      if (w === numberOfWords - 1) {
         loremIpsumText = loremIpsumText.slice(0, -1);
         loremIpsumText += '.';
       } else if (Math.random() > 0.9) {
@@ -55,11 +56,11 @@ const generateLoremIpsum = () => {
         <div class="flex flex-wrap gap-2 p-fluid">
           <div class="flex-auto">
             <label for="paragraph" class="font-bold block mb-2">Number of paragraph</label>
-            <InputNumber id="paragraph" class="flex-1" v-model="paragraphs" :min="1" :max="100"/>
+            <InputNumber id="paragraph" class="flex-1" v-model="paragraphs" :min="1" :max="100" placeholder="Enter how many paragraphs you want"/>
           </div>
           <div class="flex-auto">
             <label for="word" class="font-bold block mb-2">Number of words</label>
-            <InputNumber id="word" class="flex-1" v-model="words" :min="1" :max="1000"/>
+            <InputNumber id="word" class="flex-1" v-model="words" :min="1" :max="1000" placeholder="Random if empty or value is 0"/>
           </div>
           <Button class="flex-auto" @click="generateLoremIpsum()" label="Generate"/>
           <SinglePreviewBox :text="text"/>
