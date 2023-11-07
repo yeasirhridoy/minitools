@@ -20,9 +20,9 @@ const bmi = computed(() => {
     let status = ''
     if (bmi < 18.5) {
       status = 'Underweight'
-    } else if (bmi >= 18.5 && bmi <= 24.9) {
+    } else if (bmi <= 24.9) {
       status = 'Normal'
-    } else if (bmi >= 25 && bmi <= 29.9) {
+    } else if (bmi <= 29.9) {
       status = 'Overweight'
     } else if (bmi >= 30) {
       status = 'Obesity'
