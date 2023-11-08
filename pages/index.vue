@@ -53,7 +53,99 @@ const items = [
   {
     title: 'BMI Calculator',
     to: '/bmi-calculator'
-  }
+  },
+  {
+    title: 'Timezone Converter',
+    to: '/timezone-converter'
+  },
+  // {
+  //   title: 'JSON Formatter',
+  //   to: '/json-formatter'
+  // },
+  // {
+  //   title: 'JSON Validator',
+  //   to: '/json-validator'
+  // },
+  // {
+  //   title: 'XML Formatter',
+  //   to: '/xml-formatter'
+  // },
+  // {
+  //   title: 'XML Validator',
+  //   to: '/xml-validator'
+  // },
+  // {
+  //   title: 'HTML Formatter',
+  //   to: '/html-formatter'
+  // },
+  // {
+  //   title: 'HTML Validator',
+  //   to: '/html-validator'
+  // },
+  // {
+  //   title: 'CSV Formatter',
+  //   to: '/csv-formatter'
+  // },
+  // {
+  //   title: 'CSV Validator',
+  //   to: '/csv-validator'
+  // },
+  // {
+  //   title: 'YAML Formatter',
+  //   to: '/yaml-formatter'
+  // },
+  // {
+  //   title: 'YAML Validator',
+  //   to: '/yaml-validator'
+  // },
+  // {
+  //   title: 'SQL Formatter',
+  //   to: '/sql-formatter'
+  // },
+  // {
+  //   title: 'SQL Validator',
+  //   to: '/sql-validator'
+  // },
+  // {
+  //   title: 'Javascript Formatter',
+  //   to: '/javascript-formatter'
+  // },
+  // {
+  //   title: 'Javascript Validator',
+  //   to: '/javascript-validator'
+  // },
+  // {
+  //   title: 'CSS Formatter',
+  //   to: '/css-formatter'
+  // },
+  // {
+  //   title: 'CSS Validator',
+  //   to: '/css-validator'
+  // },
+  // {
+  //   title: 'XML to JSON Converter',
+  //   to: '/xml-to-json-converter'
+  // },
+  // {
+  //   title: 'JSON to XML Converter',
+  //   to: '/json-to-xml-converter'
+  // },
+  // {
+  //   title: 'XML to CSV Converter',
+  //   to: '/xml-to-csv-converter'
+  // },
+  // {
+  //   title: 'CSV to XML Converter',
+  //   to: '/csv-to-xml-converter'
+  // },
+  // {
+  //   title: 'XML to YAML Converter',
+  //   to: '/xml-to-yaml-converter'
+  // },
+  // {
+  //   title: 'YAML to XML Converter',
+  //   to: '/yaml-to-xml-converter'
+  // },
 ]
 
 useSeoMeta({

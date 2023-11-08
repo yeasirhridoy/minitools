@@ -84,6 +84,11 @@ const model = ref([
         label: 'Case Converter',
         icon: 'pi pi-fw pi-pencil',
         to: '/case-converter'
+      },
+      {
+        label: 'Timezone Converter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/timezone-converter'
       }
     ]
   },
