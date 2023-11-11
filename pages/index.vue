@@ -58,10 +58,10 @@ const items = [
     title: 'Timezone Converter',
     to: '/timezone-converter'
   },
-  // {
-  //   title: 'JSON Formatter',
-  //   to: '/json-formatter'
-  // },
+  {
+    title: 'JSON Formatter',
+    to: '/json-formatter'
+  },
   // {
   //   title: 'JSON Validator',
   //   to: '/json-validator'

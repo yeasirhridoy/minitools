@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import WordCount from "../components/word-counter/WordCount.vue";
+
 const text = ref('')
 
 useSeoMeta({

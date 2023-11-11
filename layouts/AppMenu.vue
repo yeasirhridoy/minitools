@@ -24,7 +24,37 @@ const model = ref([
         label: 'Time Formatter',
         icon: 'pi pi-fw pi-pencil',
         to: '/time-formatter'
-      }
+      },
+      {
+        label: 'JSON Formatter',
+        icon: 'pi pi-fw pi-pencil',
+        to: '/json-formatter'
+      },
+      // {
+      //   label: 'XML Formatter',
+      //   icon: 'pi pi-fw pi-pencil',
+      //   to: '/xml-formatter'
+      // },
+      // {
+      //   label: 'SQL Formatter',
+      //   icon: 'pi pi-fw pi-pencil',
+      //   to: '/sql-formatter'
+      // },
+      // {
+      //   label: 'HTML Formatter',
+      //   icon: 'pi pi-fw pi-pencil',
+      //   to: '/html-formatter'
+      // },
+      // {
+      //   label: 'CSS Formatter',
+      //   icon: 'pi pi-fw pi-pencil',
+      //   to: '/css-formatter'
+      // },
+      // {
+      //   label: 'Javascript Formatter',
+      //   icon: 'pi pi-fw pi-pencil',
+      //   to: '/javascript-formatter'
+      // },
     ]
   },
   {
