@@ -2798,6 +2798,13 @@ const search = (event) => {
   filteredTimezones.value = newFilteredTimezones;
 }
 
+useSeoMeta({
+  title: 'Timezone Converter',
+  ogTitle: 'Timezone Converter',
+  description: 'Timezone Converter',
+  ogDescription: 'Timezone Converter',
+  ogImage: '',
+})
 </script>
 
 <template>
