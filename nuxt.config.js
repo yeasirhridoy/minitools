@@ -18,6 +18,10 @@ export default defineNuxtConfig({
     build: {
         transpile: ['primevue']
     },
+    buildModules: ['@nuxtjs/moment'],
+    moment: {
+        timezone: true
+    },
     script: [
         {
             strategy: 'lazyOnload',

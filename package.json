@@ -16,12 +16,14 @@
     "dependencies": {
         "chart.js": "3.3.2",
         "diff-match-patch": "^1.0.5",
+        "moment-timezone": "^0.5.43",
         "primeflex": "^3.3.0",
         "primeicons": "^6.0.1",
         "primevue": "^3.28.0"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.18.9",
+        "@nuxtjs/moment": "^1.6.1",
         "eslint": "^8.30.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-nuxt": "^4.0.0",
