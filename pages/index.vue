@@ -62,6 +62,10 @@ const items = [
     title: 'JSON Formatter',
     to: '/json-formatter'
   },
+  {
+    title: 'Math Generator',
+    to: '/math-generator'
+  },
   // {
   //   title: 'JSON Validator',
   //   to: '/json-validator'
