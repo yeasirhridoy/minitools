@@ -24,10 +24,6 @@ const generateProblems = () => {
 <template>
     <div class="grid gap-2">
         <div class="col-12 md:col-2">
-            <label for="min" class="font-bold mb-2">Minimum Value</label>
-            <InputNumber id="min" v-model="min" class="w-full mt-2" placeholder="Minimum Value" />
-        </div>
-        <div class="col-12 md:col-2">
             <label for="max" class="font-bold mb-2">Maximum Value</label>
             <InputNumber id="max" v-model="max" class="w-full mt-2" placeholder="Maximum Value" />
         </div>

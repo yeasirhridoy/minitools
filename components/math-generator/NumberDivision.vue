@@ -11,10 +11,14 @@ const answer = computed(() => {
 });
 
 const showAnswer = ref(false);
+
+watch(() => props.numbers, () => {
+    showAnswer.value = false;
+});
 </script>
 
 <template>
-    <div class="card">
+    <div class="card mb-1">
         <span class="font-bold">
             {{ numbers?.largerNumber }} ÷ {{ numbers?.smallerNumber }}
         </span>

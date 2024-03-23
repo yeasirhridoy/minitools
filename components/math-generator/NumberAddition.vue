@@ -11,10 +11,14 @@ const answer = computed(() => {
 });
 
 const showAnswer = ref(false);
+
+watch(() => props.numbers, () => {
+    showAnswer.value = false;
+});
 </script>
 
 <template>
-    <div class="card">
+    <div class="card mb-1">
         <span class="font-bold" v-for="(number, i) in numbers" :key="i">{{ number }}
             <span v-if="i < numbers.length - 1"> + </span>
         </span>

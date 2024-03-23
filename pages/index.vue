@@ -163,9 +163,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="grid">
+  <div class="grid mx-2 md:mx-0">
     <div class="col-12">
-      <h1 class="text-center">Online Tools</h1>
+      <h1 class="text-center mt-4">Online Tools</h1>
     </div>
     <div v-for="(item,i) in items" :key="i" class="col-12 lg:col-6 xl:col-3">
       <div class="card mb-0">
